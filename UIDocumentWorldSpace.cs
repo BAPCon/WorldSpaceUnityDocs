@@ -56,7 +56,7 @@ public class UIDocumentWorldSpace : MonoBehaviour
 
     private void Start()
     {
-        hashString = getHashString();
+        hashString = GetHashString();
     }
 
 
@@ -174,7 +174,7 @@ public class UIDocumentWorldSpace : MonoBehaviour
     /// Updates position and scale in relation to reference settings.
     /// </summary>
     /// <returns>Returns a string of the combined hashes from required components/variables</returns>
-    string getHashString()
+    string GetHashString()
     {
         string hashstr = "";
         if (treeAsset != null) hashstr += treeAsset.GetHashCode().ToString();
@@ -190,7 +190,7 @@ public class UIDocumentWorldSpace : MonoBehaviour
     /// Checks if the desired scale, reference unit size, or reference dimension has been changed.
     /// </summary>
     /// <returns>Returns true if any of the checked values has changed.</returns>
-    bool scaleChanged()
+    bool ScaleChanged()
     {
         bool haschanged = lastScale != transform.localScale;
         haschanged = haschanged || lastUnitSize != unitSize;
@@ -211,9 +211,9 @@ public class UIDocumentWorldSpace : MonoBehaviour
     /// Checks if the combined hash string for the panel/settings/components has changed.
     /// </summary>
     /// <returns>Returns true if any of the checked values has changed.</returns>
-    bool settingsChanged()
+    bool SettingsChanged()
     {
-        string currentHashString = getHashString();
+        string currentHashString = GetHashString();
         if (hashString != currentHashString)
         {
             hashString = currentHashString;
@@ -301,7 +301,7 @@ public class UIDocumentWorldSpace : MonoBehaviour
         {
             try
             {
-                if (settingsChanged() || scaleChanged() || validate)
+                if (SettingsChanged() || ScaleChanged() || validate)
                 {
                     InitializeMembers();
                     validate = false;
