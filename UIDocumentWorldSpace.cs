@@ -2,6 +2,8 @@ using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+//Author: github.com/BAPCon
+
 [ExecuteInEditMode]
 public class UIDocumentWorldSpace : MonoBehaviour
 {
